@@ -22,6 +22,6 @@ class SingleLogOutSignoutHandler(SignoutPlugin):
         url = settings.SAML2_AUTH.get('LOGOUT_REDIRECT_URL')
         if url is None:
             # default to ADFS style logouts
-            url = '{}?wa=wsignout1.0'.format(saml_client.sso_location())
+            url = '{}/idpinitiatedsignon.aspx'.format(saml_client.sso_location())
 
         return HttpResponseRedirect(url)
