@@ -13,11 +13,12 @@ class SingleLogOutSignoutHandler(SignoutPlugin):
     @classmethod
     def signout(cls, request):
         """Logs the user out of the local system and redirects them to the REDIRECT URL in the SAML Metadata"""
-        name_id = decode(request.session['name_id'])
         logout(request)
 
         saml_client = _get_saml_client(utils.get_current_domain(request))
-        saml_client.local_logout(name_id)
+        if 'name_id' in request.session:
+            name_id = decode(['name_id'])
+            saml_client.local_logout(name_id)
 
         url = settings.SAML2_AUTH.get('LOGOUT_REDIRECT_URL')
         if url is None:
