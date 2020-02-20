@@ -1,6 +1,6 @@
-"""The setup module for django_saml2_auth_signout_redirect.
+"""The setup module for django_saml2_auth_idperror_redirect.
 See:
-https://github.com/ambsw/django_saml2_auth_signout_redirect
+https://github.com/ambsw/django_saml2_auth_idperror_redirect
 """
 
 from codecs import open
@@ -8,7 +8,7 @@ from os import path
 
 from setuptools import (setup, find_packages)
 
-import django_saml2_auth_signout_redirect
+import django_saml2_auth_idperror_redirect
 
 here = path.abspath(path.dirname(__file__))
 
@@ -17,19 +17,19 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='django_saml2_auth_signout_redirect',
+    name='django_saml2_auth_idperror_redirect',
 
-    version=django_saml2_auth_signout_redirect.__version__,
+    version=django_saml2_auth_idperror_redirect.__version__,
 
-    description='Django SAML2 Plugin for URL redirection on Logout (usually to an IdP logout)',
+    description='Django SAML2 Plugin for URL redirection on IDP Error (usually to an IdP login)',
     # requires unix line endings
     long_description=long_description,
     long_description_content_type="text/markdown",
 
-    url='https://github.com/ambsw/django-saml2-auth-signout-redirect',
+    url='https://github.com/ambsw/django-saml2-auth-idperror-redirect',
 
     author='Clayton Daley',
-    author_email='technology+saml2_signout_redirect@gmail.com',
+    author_email='technology+saml2_idperror_redirect@gmail.com',
 
     license='Apache 2.0',
 
@@ -61,7 +61,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
 
-    keywords='Django SAML2 Logout Redirection IdP',
+    keywords='Django SAML2 IDP Error Redirection Plugin',
 
     packages=find_packages(),
 
