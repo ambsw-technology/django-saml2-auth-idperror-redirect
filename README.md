@@ -30,4 +30,6 @@ In settings.py:
         # must provide a URL or VIEW
         'IDP_ERROR_REDIRECT_VIEW': 'login',
         'IDP_ERROR_REDIRECT_URL': 'https://...',
+        # whether or not to include a next=<url> query argument
+        'IDP_ERROR_REDIRECT_NEXT': True,
     }
